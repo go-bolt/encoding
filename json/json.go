@@ -22,3 +22,11 @@ func Use(marshalFn encoding.Marshal, unmarshalFn encoding.Unmarshal) {
 	marshal = marshalFn
 	unmarshal = unmarshalFn
 }
+
+func Marshal(data any) ([]byte, error) {
+	return marshal(data)
+}
+
+func Unmarshal(data []byte, v any) error {
+	return unmarshal(data, v)
+}
